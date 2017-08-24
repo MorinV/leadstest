@@ -1,0 +1,440 @@
+2017/08/24 10:21:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'leadstest.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/08/24 10:31:22 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: DROP TABLE `User`.
+2017/08/24 10:31:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: DROP TABLE `User`' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1375): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(275): CDbCommand->dropTable('User')
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_070828_create_tables.php(33): CDbMigration->dropTable('User')
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(440): m170824_070828_create_tables->down()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(181): MigrateCommand->migrateDown('m170824_070828_...')
+#5 [internal function]: MigrateCommand->actionRedo(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:32:18 [error] [php] Missing argument 2 for CDbMigration::dropForeignKey(), called in D:\OpenServer\domains\leadstest\protected\migrations\m170824_070828_create_tables.php on line 36 and defined (D:\OpenServer\domains\yii\framework\db\CDbMigration.php:375)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(181): MigrateCommand->migrateDown()
+#1 unknown(0): MigrateCommand->actionRedo()
+#2 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#3 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): MigrateCommand->run()
+#4 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#5 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#6 D:\OpenServer\domains\yii\framework\yiic.php(33): CConsoleApplication->run()
+#7 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once()
+
+2017/08/24 10:37:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'leadstest.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/08/24 10:37:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'leadstest.balance' doesn't exist. The SQL statement executed was: ALTER TABLE `Balance` ADD CONSTRAINT `BalanceUser` FOREIGN KEY (`user`) REFERENCES `User` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2017/08/24 10:37:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'leadstest.balance' doesn't exist. The SQL statement executed was: ALTER TABLE `Balance` ADD CONSTRAINT `BalanceUser` FOREIGN KEY (`user`) REFERENCES `User` (`id`) ON DELETE CASCADE ON UPDATE CASCADE' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1463): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(366): CDbCommand->addForeignKey('BalanceUser', 'Balance', 'user', 'User', 'id', 'CASCADE', 'CASCADE')
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_073630_create_tables.php(28): CDbMigration->addForeignKey('BalanceUser', 'Balance', 'user', 'User', 'id', 'CASCADE', 'CASCADE')
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(415): m170824_073630_create_tables->up()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp('m170824_073630_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:38:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE `tbl_user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`email` varchar(255) NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`AccesKey` varchar(255) NOT NULL,
+	`ApiKey` varchar(255) NOT NULL
+).
+2017/08/24 10:38:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE `tbl_user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`email` varchar(255) NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`AccesKey` varchar(255) NOT NULL,
+	`ApiKey` varchar(255) NOT NULL
+)' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1352): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(250): CDbCommand->createTable('tbl_user', Array, NULL)
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_073630_create_tables.php(13): CDbMigration->createTable('tbl_user', Array)
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(415): m170824_073630_create_tables->up()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp('m170824_073630_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:39:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'leadstest.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/08/24 10:40:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'balance'. The SQL statement executed was: DROP TABLE `Balance`.
+2017/08/24 10:40:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'balance'. The SQL statement executed was: DROP TABLE `Balance`' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1375): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(275): CDbCommand->dropTable('Balance')
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_073849_create_tables.php(34): CDbMigration->dropTable('Balance')
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(440): m170824_073849_create_tables->down()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown('m170824_073849_...')
+#5 [internal function]: MigrateCommand->actionDown(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:41:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: DROP TABLE `tbl_user`.
+2017/08/24 10:41:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: DROP TABLE `tbl_user`' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1375): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(275): CDbCommand->dropTable('tbl_user')
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_073849_create_tables.php(34): CDbMigration->dropTable('tbl_user')
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(440): m170824_073849_create_tables->down()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown('m170824_073849_...')
+#5 [internal function]: MigrateCommand->actionDown(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:41:42 [error] [php] Missing argument 2 for CDbMigration::dropForeignKey(), called in D:\OpenServer\domains\leadstest\protected\migrations\m170824_073849_create_tables.php on line 34 and defined (D:\OpenServer\domains\yii\framework\db\CDbMigration.php:375)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown()
+#1 unknown(0): MigrateCommand->actionDown()
+#2 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#3 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): MigrateCommand->run()
+#4 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#5 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#6 D:\OpenServer\domains\yii\framework\yiic.php(33): CConsoleApplication->run()
+#7 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once()
+
+2017/08/24 10:42:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'tbl_user'. The SQL statement executed was: DROP TABLE `tbl_user`.
+2017/08/24 10:42:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'tbl_user'. The SQL statement executed was: DROP TABLE `tbl_user`' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1375): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(275): CDbCommand->dropTable('tbl_user')
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_073849_create_tables.php(38): CDbMigration->dropTable('tbl_user')
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(440): m170824_073849_create_tables->down()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown('m170824_073849_...')
+#5 [internal function]: MigrateCommand->actionDown(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:43:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1025 Error on rename of '.\leadstest\tbl_balance' to '.\leadstest\#sql2-1794-78' (errno: 152). The SQL statement executed was: ALTER TABLE `tbl_balance` DROP FOREIGN KEY `BalanceUser`.
+2017/08/24 10:43:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1025 Error on rename of '.\leadstest\tbl_balance' to '.\leadstest\#sql2-1794-78' (errno: 152). The SQL statement executed was: ALTER TABLE `tbl_balance` DROP FOREIGN KEY `BalanceUser`' in D:\OpenServer\domains\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\db\CDbCommand.php(1475): CDbCommand->execute()
+#1 D:\OpenServer\domains\yii\framework\db\CDbMigration.php(379): CDbCommand->dropForeignKey('BalanceUser', 'tbl_balance')
+#2 D:\OpenServer\domains\leadstest\protected\migrations\m170824_073849_create_tables.php(34): CDbMigration->dropForeignKey('BalanceUser', 'tbl_balance')
+#3 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(440): m170824_073849_create_tables->down()
+#4 D:\OpenServer\domains\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown('m170824_073849_...')
+#5 [internal function]: MigrateCommand->actionDown(Array)
+#6 D:\OpenServer\domains\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\OpenServer\domains\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\OpenServer\domains\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CConsoleApplication->processRequest()
+#10 D:\OpenServer\domains\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\OpenServer\domains\leadstest\protected\yiic.php(7): require_once('D:\\OpenServer\\d...')
+#12 {main}
+---
+2017/08/24 10:55:39 [error] [php] Missing argument 1 for CUserIdentity::__construct(), called in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php on line 80 and defined (D:\OpenServer\domains\yii\framework\web\auth\CUserIdentity.php:43)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/login
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (80)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 13:36:11 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in D:\OpenServer\domains\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\helpers\CHtml.php(2728): CComponent->__get('username')
+#1 D:\OpenServer\domains\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 D:\OpenServer\domains\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 D:\OpenServer\domains\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 D:\OpenServer\domains\leadstest\protected\views\site\login.php(29): CActiveForm->textField(Object(LoginForm), 'username')
+#5 D:\OpenServer\domains\yii\framework\web\CBaseController.php(126): require('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\OpenServer\\d...', Array, true)
+#7 D:\OpenServer\domains\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\OpenServer\\d...', Array, true)
+#8 D:\OpenServer\domains\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#9 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(123): CController->render('login', Array)
+#10 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#11 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\OpenServer\domains\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\OpenServer\domains\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#15 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#16 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php/site/login
+HTTP_REFERER=http://leadstest:81/index.php/site/login
+---
+2017/08/24 13:55:24 [error] [php] mail() expects parameter 1 to be string, array given (D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php:105)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#2 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#4 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/login
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (105)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:38:31 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "load".' in D:\OpenServer\domains\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(93): CComponent->__call('load', Array)
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(93): LoginForm->load(Array)
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/site/login
+HTTP_REFERER=http://leadstest:81/index.php/site/login
+---
+2017/08/24 14:51:30 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(137): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=g34t9ghg
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (137)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:52:26 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(137): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=g34t9ghg
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (137)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:53:05 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(137): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=g34t9ghg
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (137)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:53:37 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(137): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=g34t9ghg
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (137)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:54:36 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(137): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=g34t9ghg
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (137)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:55:39 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(137): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=g34t9ghg
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (137)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:56:33 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(120): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=599ebebbd1f359.86971998
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (120)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:56:50 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(120): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=599ebef181b195.34604445
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (120)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:57:33 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(120): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=599ebf022e2423.79620309
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (120)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 14:59:31 [error] [php] Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php:114) (D:\OpenServer\domains\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(124): SiteController->redirect()
+#1 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#2 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=fwwe@fewf.rt&AccesKey=599ebf2dbbe464.38884340
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (124)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 15:07:18 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\OpenServer\domains\yii\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\auth\CWebUser.php(233): CWebUser->changeIdentity()
+#1 D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php(140): CWebUser->login()
+#2 D:\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuth()
+#3 D:\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\OpenServer\domains\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\OpenServer\domains\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 D:\OpenServer\domains\leadstest\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/auth?email=grae@gre.rt&AccesKey=599ec156da7050.23071521
+in D:\OpenServer\domains\leadstest\protected\controllers\SiteController.php (140)
+in D:\OpenServer\domains\leadstest\index.php (13)
+2017/08/24 16:26:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/withdraw".' in D:\OpenServer\domains\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/withdraw')
+#1 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/api/withdraw
+---
+2017/08/24 16:26:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/withdraw".' in D:\OpenServer\domains\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/withdraw')
+#1 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/api/withdraw?ApiKey=7bd81b9b61e0ea21b88f5548a9a562a5&amount=100
+---
+2017/08/24 16:27:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/withdraw".' in D:\OpenServer\domains\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/withdraw')
+#1 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/api/withdraw?ApiKey=7bd81b9b61e0ea21b88f5548a9a562a5&amount=100
+---
+2017/08/24 16:27:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/withdraw".' in D:\OpenServer\domains\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/withdraw')
+#1 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/api/withdraw?ApiKey=7bd81b9b61e0ea21b88f5548a9a562a5&amount=100
+---
+2017/08/24 16:29:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\OpenServer\domains\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\OpenServer\domains\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\OpenServer\domains\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): CController->run('withdraw')
+#4 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/withdraw')
+#5 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php/api/withdraw?&amount=100
+---
+2017/08/24 16:29:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\OpenServer\domains\yii\framework\web\CController.php:336
+Stack trace:
+#0 D:\OpenServer\domains\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\OpenServer\domains\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\OpenServer\domains\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(282): CController->run('withdraw')
+#4 D:\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/withdraw')
+#5 D:\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 D:\OpenServer\domains\leadstest\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php/api/withdraw?
+---
